@@ -11,8 +11,16 @@ How to use
 ```    
 git clone https://github.com/aakashjhawar/face-detection.git
 cd face-detection
+```
+To detect face from photos:
+```
 python3 detect_faces_image.py <path/to/input_image>
 ```
+To detect face from videos:
+```
+python3 detect_faces_video.py
+```
+
 ## Prerequisites
 
 - Python 3.5
@@ -25,3 +33,6 @@ sudo apt-get install python-opencv
 
 #### Face detection from group photo-
 ![Result](https://github.com/aakashjhawar/face-detection/blob/master/images/result1.png)
+
+#### Face detection from live video-
+![Result](https://github.com/aakashjhawar/face-detection/blob/master/images/result2.png)
