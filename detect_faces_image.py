@@ -3,7 +3,6 @@ import cv2
 import sys
 import numpy as np
 
-
 def load_model(image_path):
     # load serialized model from disk
     net = cv2.dnn.readNetFromCaffe('deploy.prototxt.txt','res10_300x300_ssd_iter_140000.caffemodel')
@@ -27,7 +26,7 @@ def load_model(image_path):
         # filter out weak detections by ensuring the `confidence` is greater than the minimum confidence
         '''you can also change the 'confidence' (0.5 here) for better results'''
         if confidence > 0.5:
-            # compute the (x, y)-coordinates of the bounding box for the object
+            # compute the (x, y) coordinates of the bounding box for the object
             box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
             (startX, startY, endX, endY) = box.astype("int")
             #print('detections', detections[0, 0, i, 3:7])
@@ -48,9 +47,6 @@ def load_model(image_path):
     
     # Destroy all the windows
     cv2.destroyAllWindows()
-
-
-    
 
 if __name__ == '__main__':
     #image_path = 'aakash1.jpg'
